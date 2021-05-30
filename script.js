@@ -3,6 +3,16 @@ const canvas = document.getElementById('canvas')
 
 const ctx = canvas.getContext('2d')
 
+const canvasWidth = 300
+const canvasHeight = 600
+const retinaRatio = 2
+
+canvas.width = canvasWidth
+canvas.height = canvasHeight
+ctx.scale(retinaRatio, retinaRatio)
+canvas.style.width = `${canvasWidth / retinaRatio}px`
+canvas.style.height = `${canvasHeight / retinaRatio}px`
+
 function example1() {
   ctx.fillRect(25, 25, 100, 100)
   ctx.clearRect(45, 45, 60, 60)
