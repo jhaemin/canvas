@@ -3,8 +3,8 @@ const canvas = document.getElementById('canvas')
 
 const ctx = canvas.getContext('2d')
 
-const canvasWidth = 300
-const canvasHeight = 600
+const canvasWidth = 500
+const canvasHeight = 500
 const retinaRatio = 2
 
 canvas.width = canvasWidth
@@ -81,4 +81,29 @@ function drawArcs() {
   }
 }
 
-drawArcs()
+function drawSpeechBalloon() {
+  ctx.beginPath()
+  ctx.moveTo(75, 25)
+  ctx.quadraticCurveTo(25, 25, 25, 62.5)
+  ctx.quadraticCurveTo(25, 100, 50, 100)
+  ctx.quadraticCurveTo(50, 120, 30, 125)
+  ctx.quadraticCurveTo(60, 120, 65, 100)
+  ctx.quadraticCurveTo(125, 100, 125, 62.5)
+  ctx.quadraticCurveTo(125, 25, 75, 25)
+  ctx.stroke()
+}
+
+function drawHeart() {
+  ctx.beginPath()
+  ctx.moveTo(75, 40)
+  ctx.bezierCurveTo(75, 37, 70, 25, 50, 25)
+  ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5)
+  ctx.bezierCurveTo(20, 80, 40, 102, 75, 120)
+  ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5)
+  ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25)
+  ctx.bezierCurveTo(85, 25, 75, 37, 75, 40)
+  ctx.fillStyle = '#ff0000'
+  ctx.fill()
+}
+
+drawHeart()
